@@ -4,6 +4,7 @@ import com.finityedge.shoppr.model.Product;
 import com.finityedge.shoppr.repository.CategoryRepository;
 import com.finityedge.shoppr.repository.ProductRepository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +23,10 @@ public class ProductController {
     @GetMapping("")
     public Iterable<Product> getAllProducts() {
         return products.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable Integer id) {
+        return products.findById(id).get();
     }
 }
