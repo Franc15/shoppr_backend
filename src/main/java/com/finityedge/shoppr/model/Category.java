@@ -12,9 +12,9 @@ public class Category {
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
 
-    public Category(String name, String description) {
+    public Category(String name, String desc) {
         this.name = name;
-        this.desc = description;
+        this.desc = desc;
         this.createdAt = LocalDateTime.now();
     }
 
